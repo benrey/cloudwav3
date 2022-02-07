@@ -10,6 +10,7 @@
     --lightGray: #d3d3d3;
     --cutltured: #f5f3f4;
     --white: #ffffff;
+    --babyblue: #215ed8
    
 }
 
@@ -41,7 +42,7 @@ backface-visibility: hidden;
 animation: slideShow ease-in-out 25s both infinite;
 animation-timing-function: ease-in-out;
 background-repeat: no-repeat;
-background-image: url(../img/work/3.JPG), url(../img/work/3.JPG);
+background-image: url(../imgs/slideshow/multi-cloud.png), url(../imgs/slideshow/multi-cloud.png);
 }
 #slideShow{
 width:100%;
@@ -62,29 +63,29 @@ backface-visibility: hidden;
 animation: slideShow ease-in-out 25s both infinite;
 animation-timing-function: ease-in-out;
 background-repeat: no-repeat;
-background-image: url(../img/work/3.JPG), url(../img/work/3.JPG);
+background-image: url(../imgs/slideshow/multi-cloud.png), url(../imgs/slideshow/multi-cloud.png);
 }
 @keyframes slideShow{
-    0% {
-      background-image: url(../img/work/3.JPG), url(../img/work/3.JPG)
+    20% {
+      background-image: url(../imgs/slideshow/multi-cloud.png), url(../imgs/slideshow/cloud.jpg)
     }
-    10%{
-      background-image: url(../img/work/3.JPG), url(../img/work/19.jpg)
+    35%{
+      background-image: url(../imgs/slideshow/cloud.jpg), url(../imgs/slideshow/multi-cloud.png)
     }
-    30%{
-      background-image: url(../img/work/19.jpg), url(../img/work/48.jpg)
+    50%{
+      background-image: url(../imgs/slideshow/multi-cloud.png), url(../imgs/slideshow/shared-workspace.jpg)
     }
-    40%{
-      background-image: url(../img/work/48.jpg), url(../img/work/53.jpg)
+    65%{
+      background-image: url(../imgs/slideshow/shared-workspace.jpg), url(../imgs/slideshow/shared-workspace.png)
     }
-    50% {
-      background-image: url(../img/work/53.jpg), url(../img/work/12.jpg)
+    80% {
+      background-image: url(../imgs/slideshow/shared-workspace.png), url(../imgs/slideshow/workfromhome1.png)
     }
-    70% {
-      background-image: url(../img/work/63.jpg), url(../img/work/54.jpg)
+    90% {
+      background-image: url(../imgs/slideshow/workfromhome1.png), url(../imgs/slideshow/coms.png)
     }
     100% {
-      background-image: url(../img/work/54.jpg), url(../img/work/3.JPG)
+      background-image: url(../imgs/slideshow/coms.png), url(../imgs/slideshow/multi-cloud.png)
     }
   }
 .header {
@@ -113,22 +114,21 @@ nav.navbar.transparent {
   background-color: #222 !important;
 }
 
-
-
 .navbar-brand { 
   overflow: visible;
-  width: 20px;
+  width: auto;
   flex-grow: .25;
   float: right;
+  margin-right: 0px;
 }
 .navbar-brand>img {
-  max-height: 40px;
-  max-width: 40px;
+  max-height: 120px;
+  max-width: 200px;
   float: right;
 }
 
 .navbar-brand:hover {
-  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(150%);
+  filter: invert(25%) sepia(100%) saturate(2000%) hue-rotate(214deg) brightness(90%) contrast(90%);
 }
 
 .navbar-brand-text {
@@ -152,7 +152,6 @@ nav.navbar.transparent {
   height: 3px;
   top: 100%;
   left: 17%;
-  background: var(--brightfuckingred);
   transition: transform 0.05s;
   transform: scaleX(0);
   transform-origin: top;
@@ -161,7 +160,7 @@ nav.navbar.transparent {
   margin-right: 40px;
 }
 .navbar-brand-text:hover {
-  text-decoration-color: var(--brightfuckingred);
+  text-decoration-color: var(--cutltured);
   filter: invert(60%) sepia(82%) saturate(6261%) hue-rotate(344deg) brightness(101%) contrast(114%);
 }
 
@@ -290,13 +289,13 @@ nav.navbar.transparent {
   height: 3px;
   top: 100%;
   left: 17%;
-  background: var(--brightfuckingred);
+  background: var(--babyblue);
   transition: transform 0.1s;
   transform: scaleX(0);
   transform-origin: top;
 }
 .nav-link:hover{
-  text-decoration-color: var(--brightfuckingred);
+  text-decoration-color: var(--babyblue);
   color: var(--cutltured);
 }
 
@@ -316,7 +315,7 @@ nav.navbar.transparent {
   transition-timing-function: linear;
 }
 .nav-icon:hover, .nav-icon:after {
-  filter: invert(60%) sepia(82%) saturate(6261%) hue-rotate(344deg) brightness(101%) contrast(114%);
+  filter: invert(25%) sepia(100%) saturate(2000%) hue-rotate(214deg) brightness(95%) contrast(95%);
 }
 
 .jumbotron {
@@ -361,6 +360,10 @@ div{position:relative;}
 nav.navbar {
   padding: 15px 10px 5px 5px; 
 }
+.navbar-brand{
+  float:none;
+  margin-right: 2em;
+}
 .navbar-nav {
   margin-right: 0px;
 }
@@ -385,14 +388,14 @@ nav.navbar {
   height: 3px;
   top: 100%;
   left: 17%;
-  background: var(--brightfuckingred);
+  background: var(--babyblue);
   transition: transform 0.1s;
   transform: scaleX(0);
   transform-origin: top;
 
 }
 .nav-link:hover{
-  text-decoration-color: var(--brightfuckingred);
+  text-decoration-color: var(--babyblue);
   color: var(--cutltured);
 }
 
