@@ -1,6 +1,7 @@
 :root{
     --richBlack:#0B090A;
     --eerieBlack:#161a1d;
+    --greyBlack: #222222;
     --bloodRed: #660708;
     --rubyRed: #a4161a;
     --carnelian: #ba181b;
@@ -10,10 +11,10 @@
     --lightGray: #d3d3d3;
     --cutltured: #f5f3f4;
     --white: #ffffff;
-    --babyblue: #215ed8
    
 }
-
+/*fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Roboto:wght@100;300;400&display=swap');
 
 *,
 *::before,
@@ -24,25 +25,12 @@ body:not(.loaded) #sliderShow img {
   display:none;
 }
 body {
-  width:100%;
-  height: 100%;
-  overflow-x:hidden;
-  background-attachment: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: center center;
-  background-size: cover;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  -webkit-animation: slideShow ease-in-out 25s both infinite;
-  -moz-animation: slideShow ease-in-out 25s both infinite;
-  -o-animation: slideShow ease-in-out 25s both infinite;
-  animation: slideShow ease-in-out 25s both infinite;
-  -webkit-animation-timing-function: ease-in-out;
   background-image: url(../imgs/slideshow/multi-cloud.png);
-  }
+}
+
 #slideShow{
 width:100%;
 height: 100%;
@@ -60,68 +48,70 @@ backface-visibility: hidden;
 -moz-animation: slideShow ease-in-out 25s both infinite;
 -o-animation: slideShow ease-in-out 25s both infinite;
 animation: slideShow ease-in-out 25s both infinite;
--webkit-animation-timing-function: ease-in-out;
 background-repeat: no-repeat;
 background-image: url(../imgs/slideshow/multi-cloud.png), url(../imgs/slideshow/multi-cloud.png);
 }
 @keyframes slideShow{
-    5% {
-      background-image: url(../imgs/slideshow/multi-cloud.png), url(../imgs/slideshow/cloud.jpg)
-    }
-    20%{
-      background-image: url(../imgs/slideshow/cloud.jpg), url(../imgs/slideshow/multi-cloud.png)
-    }
-    35%{
-      background-image: url(../imgs/slideshow/multi-cloud.png), url(../imgs/slideshow/shared-workspace.jpg)
-    }
-    50%{
-      background-image: url(../imgs/slideshow/shared-workspace.jpg), url(../imgs/slideshow/shared-workspace.png)
-    }
-    65% {
-      background-image: url(../imgs/slideshow/shared-workspace.png), url(../imgs/slideshow/workfromhome1.png)
-    }
-    80% {
-      background-image: url(../imgs/slideshow/workfromhome1.png), url(../imgs/slideshow/coms.png)
-    }
-    100% {
-      background-image: url(../imgs/slideshow/coms.png), url(../imgs/slideshow/multi-cloud.png)
-    }
+  0% {
+    background-image: url(../imgs/slideshow/multi-cloud.png), url(../imgs/slideshow/cloud.jpg)
+  }
+  20%{
+    background-image: url(../imgs/slideshow/cloud.jpg), url(../imgs/slideshow/multi-cloud.png)
+  }
+  35%{
+    background-image: url(../imgs/slideshow/multi-cloud.png), url(../imgs/slideshow/shared-workspace.jpg)
+  }
+  50%{
+    background-image: url(../imgs/slideshow/shared-workspace.jpg), url(../imgs/slideshow/shared-workspace.png)
+  }
+  65% {
+    background-image: url(../imgs/slideshow/shared-workspace.png), url(../imgs/slideshow/workfromhome1.png)
+  }
+  80% {
+    background-image: url(../imgs/slideshow/workfromhome1.png), url(../imgs/slideshow/coms.png)
+  }
+  100% {
+    background-image: url(../imgs/slideshow/coms.png), url(../imgs/slideshow/multi-cloud.png)
+  }
   }
 .header {
-  margin-right: 20px;
-  margin-left:  20px;
   max-width: 100%;
   max-height: 100%;
   right:0;
   left:0;
-  padding-right: 1px;
-  padding-left:  1px;
-  padding-top: 20px
 }
 h1{
     color:var(--richBlack);
 }
-nav.navbar {
-  -webkit-transition: all 0.4s ease !important;
-  transition: all 0.4s ease !important;
-  padding: 25px 20px 10px 10px !important; 
-  max-width: auto !important;
-  background-color:rgba(0,0,0,0) !important;
-}
 
-nav.navbar.transparent {
+nav.navbar {
+  margin: auto;
+  background-color:rgba(0,0,0,0) !important;
+  max-width: 1320px;
+  padding-top: 10px !important;
+}
+.container-fluid {
+  width: 100%;
+  opacity: 1;
+  background-color:rgba(0,0,0,0);
+}
+.container-fluid.transparent {
   background-color: #222 !important;
+  -webkit-transition: all .5s ease-in-out !important;
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+  width: 100% !important;
+  height: 10vh !important;
+  position: fixed;
 }
 
 .navbar-brand { 
   overflow: visible;
-  width: auto;
-  flex-grow: .25;
-  float: right;
-  margin-right: 0px;
+  width: 20px;
+  float: left;
 }
 .navbar-brand>img {
-  max-height: 120px;
+  max-height: 200px;
   max-width: 200px;
   float: right;
 }
@@ -131,7 +121,6 @@ nav.navbar.transparent {
 }
 
 .navbar-brand-text {
-  float: right;
   font-size: 1.4em;
   letter-spacing: 3px;
   margin-bottom: .25em;
@@ -158,9 +147,10 @@ nav.navbar.transparent {
 .navbar-nav {
   margin-right: 40px;
 }
-.navbar-brand-text:hover {
+.navbar-brand-text:hover {  
   text-decoration-color: var(--cutltured);
   filter: invert(60%) sepia(82%) saturate(6261%) hue-rotate(344deg) brightness(101%) contrast(114%);
+
 }
 
 .nav-bar-brand-text:hover::after {
@@ -209,7 +199,7 @@ nav.navbar.transparent {
   padding:0;
 }
 .toggler-icon {
-  display: blok;
+  display: block;
   position: absolute;
   height: 2px;
   width: 100%;
@@ -223,6 +213,9 @@ nav.navbar.transparent {
 
 .middle-bar {
   margin-top: 0px;
+}
+.toggled {
+  float: right;
 }
 /* when nav is clicked */
 .navbar-toggler .top-bar {
@@ -255,9 +248,6 @@ nav.navbar.transparent {
   transform: rotate(0deg);
 }
 
-#mynav {
-  position:absolute;
-}
 
 .nav-item{
   text-align: center;
@@ -288,13 +278,12 @@ nav.navbar.transparent {
   height: 3px;
   top: 100%;
   left: 17%;
-  background: var(--babyblue);
+  background: var(--cutltured);
   transition: transform 0.1s;
   transform: scaleX(0);
   transform-origin: top;
 }
 .nav-link:hover{
-  text-decoration-color: var(--babyblue);
   color: var(--cutltured);
 }
 
@@ -304,7 +293,6 @@ nav.navbar.transparent {
 }
 
 .nav-icon{
-  float:inherit;
   font-size: 1.5rem;
   padding: 3px;
   color: var(--cutltured);
@@ -318,14 +306,44 @@ nav.navbar.transparent {
 }
 
 .jumbotron {
-  margin-top: 4em;
+  padding-top: 3.8em;
   color: var(--cutltured)
 }
+.jumbotron .container-xxl,.jumbotron h1{
+  padding-top: 50vh;
+  color:var(--cutltured);
+  font-family: 'Merriweather', serif;
+  font-size: 2em;
+  max-width: 1320px;
+ }
+ .jumbotron h2 {
+  font-size: 1.7em;
+ }
+ .jumbotron p {
+   font-family: Arial, Helvetica, sans-serif;
+   max-width: 575px;
+ }
 
-#features {
-  margin-top: 10em;
+
+.feature.card {
+  padding: 1em;
+  background-color: var(--greyBlack);
 }
-
+.feature.card h3{
+  font-family: 'Roboto';
+  letter-spacing: 2px;
+  font-size: .55em;
+  font-weight: 300;
+  font-display:
+}
+.feature .radial svg * {
+  fill:url(#rg);
+}
+.feature .fa-instagram{
+  height: 50px;
+  width: 50px;
+  float: center;
+}
 
 .featurefbhref>img{
     max-height: 40px;
@@ -333,10 +351,12 @@ nav.navbar.transparent {
     float: center;
 }
 
-
+.footer .container {
+  max-width: 1320px;
+}
 .footerCerakotehref>img{
   max-height: 200px;
-  max-width: 220px;
+  max-width: 200px;
   float: center;
 }
 
@@ -347,26 +367,52 @@ nav.navbar.transparent {
 
 
 /*fix for screen sizes */
-@media (max-width:1284px), screen and (orientation:portrait) {
-  section {
+@media (max-width:1420px), screen and (orientation:portrait) {
+section {
   background-attachment:initial;
+}
+.navbar-brand.transparent {
+  margin-right: 0em;
+}
+.navbar-brand-text{
+text-align: right;
+margin: 15px;
+}
+.navbar-text {
+  float: right;
+}
+nav.navbar {
+  margin: auto;
+  max-width: 700px;
+}
+.navbar-brand {
+  position: relative;
+  float: none;
+  margin-left: 15px;
+}
+
+.nav-icon{
+  padding: 0px;
 }
 div{position:relative;}
 }
-
 /*fix for collapsed menu on small width protrait screens */
 @media (max-width:767px) {
-nav.navbar {
-  padding: 15px 10px 5px 5px; 
+.navbar-brand > img {
+  position: relative;
+  float:left;
 }
-.navbar-brand{
-  float:none;
-  margin-right: 2em;
+
+.navbar-toggler {
+    margin: auto;
+    padding: auto;
 }
-.navbar-nav {
-  margin-right: 0px;
-}
-.nav-link {
+
+ .navbar-brand-text {
+   text-align: center;
+    padding: 0px 0px 0px 20px;
+  }
+ .nav-link {
   font-family:Arial, Helvetica, sans-serif;
   font-weight: 400;
   letter-spacing: 4px;
@@ -378,8 +424,8 @@ nav.navbar {
   position: relative;
   display: block;
   text-decoration: none;
-}
-.nav-link:after {
+ }
+ .nav-link:after {
   position: absolute;
   color: var(--cutltured);
   content: "";
@@ -387,25 +433,56 @@ nav.navbar {
   height: 3px;
   top: 100%;
   left: 17%;
-  background: var(--babyblue);
+  background: var(--cutltured);
   transition: transform 0.1s;
   transform: scaleX(0);
   transform-origin: top;
-
-}
-.nav-link:hover{
-  text-decoration-color: var(--babyblue);
+ }
+ .nav-link:hover{
   color: var(--cutltured);
 }
+
 
 .nav-link:hover::after {
   transform: scaleX(.20);
   transform-origin: bottom;
 }
-.nav-icons {
-  text-align: center;
+.navbar-nav {
+  margin:auto;
 }
 
+.nav-icons {
+  text-align: center;
+  color: var(--cultured);
+  margin: 0em;
+  padding: .05em;
+  font-size: 2em;
+  transition:all 2s ease-in-out;
+  transition-delay: 1ms;
+  transition-duration: 20ms;
+}
+.jumbotron .container-xxl, .jumbotron h1{
+  padding-top: 40vh;
+  color:var(--cutltured);
+  font-family: 'Merriweather', serif;
+  font-size: 1.35em;
+}
+.container-xxl h2{
+  text-align: left !important;
+}
+.jumbotron h2 {
+  font-size: 1.35em;
+  text-align: left;
+}
+.jumbotron p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: .7em;
+  max-width: 575px;
+}
+.fa-tiktok {
+  color: var(--darkblack);
+  filter: drop-shadow(-.05em -0.1rem 0.05em rgba(20, 100, 100, 1)) drop-shadow(0.05em 0.1rem 0.05em rgba(220, 39, 67, 0.9));
+}
 .push{
   transition: ease-in-out all .2s;
   padding-top: 202px;
