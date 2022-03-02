@@ -94,15 +94,21 @@ nav.navbar {
   width: 100%;
   opacity: 1;
   background-color:rgba(0,0,0,0);
+  object-fit: cover;
 }
 .container-fluid.transparent {
-  background-color: #222 !important;
+  background-color: #222;
   -webkit-transition: all .5s ease-in-out !important;
   padding-right: 0px !important;
   padding-left: 0px !important;
   width: 100% !important;
   height: 10vh !important;
-  position: fixed;
+  position:fixed;
+  top:0px;
+  z-index: 999;
+}
+.container-fluid.height.transparent {
+  height: 32vh!important;
 }
 
 .navbar-brand { 
@@ -117,7 +123,7 @@ nav.navbar {
 }
 
 .navbar-brand:hover {
-  filter: invert(25%) sepia(100%) saturate(2000%) hue-rotate(214deg) brightness(90%) contrast(90%);
+  filter: brightness(70%) contrast(90%);
 }
 
 .navbar-brand-text {
@@ -149,7 +155,7 @@ nav.navbar {
 }
 .navbar-brand-text:hover {  
   text-decoration-color: var(--cutltured);
-  filter: invert(60%) sepia(82%) saturate(6261%) hue-rotate(344deg) brightness(101%) contrast(114%);
+  filter: brightness(21%) contrast(10%);
 
 }
 
@@ -398,13 +404,16 @@ div{position:relative;}
 }
 /*fix for collapsed menu on small width protrait screens */
 @media (max-width:767px) {
+nav.navbar {
+  margin:auto;
+}
 .navbar-brand > img {
   position: relative;
   float:left;
 }
 
 .navbar-toggler {
-    margin: auto;
+    margin-right: 3vh;
     padding: auto;
 }
 
@@ -460,6 +469,9 @@ div{position:relative;}
   transition:all 2s ease-in-out;
   transition-delay: 1ms;
   transition-duration: 20ms;
+}
+.nav-icon:hover, .nav-icon:after {
+  filter: brightness(35%) contrast(95%);
 }
 .jumbotron .container-xxl, .jumbotron h1{
   padding-top: 40vh;

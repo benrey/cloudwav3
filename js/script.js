@@ -7,7 +7,12 @@ $(window).scroll(function() {
     $('con').removeClass('transparent');
   }
 });
-
+$('.navbar-collapse').on('show.bs.collapse', function (e) {
+  $('con').addClass('height');
+})
+$('.navbar-collapse').on('hide.bs.collapse', function (e) {
+  $('con').removeClass('height');
+})
 var icon = document.getElementsByClassName("icon-bars");
 var pushDown = document.getElementById("push");
 
